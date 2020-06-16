@@ -193,18 +193,39 @@ img{
 
 .chat_container{
   overflow: scroll;
+  position: relative;
 }
 
 .chat_container .chat_message{
   width: 250px;
-  height: 60px;
-  background-color: #ffffff;
   line-height: 60px;
   padding: 0 15px;
   border-radius: 15px;
-  margin: 15px;
+  width: 30%;
 }
 
+.message_baloon{
+  height: 60px;
+  margin: 0px 60px;
+  margin-top: 20px;
+}
+
+
+.sent_message{
+  margin-left: 20px;
+}
+
+.chat_container .sent{
+  background-color: #d5f9ba;
+  float: right;
+
+}
+
+.chat_container .received{
+  background-color: #ffff;
+  float: left;
+
+}
 
 
 
