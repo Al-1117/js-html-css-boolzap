@@ -194,6 +194,10 @@ img{
 }
 
 /* Chat list */
+.chat_list{
+  height: calc(100% - 205px);
+  overflow: auto;
+}
 
 /* Single chat */
 .single_chat{
@@ -201,6 +205,7 @@ img{
   display: flex;
   align-items: center;
   background-color: #ffff;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .single_chat:hover{
@@ -231,18 +236,23 @@ img{
   width: 100%;
 }
 
+.contact_infos{
+  flex-grow: 1;
+}
+
 
 /* END OF LEFT SIDE */
 
 /*********************** RIGHT SIDE *******************/
 .container .right_side{
-  background-color: salmon; /* DEBUG: da rimuovere */
+  background-color:#eaeaea;
+  height: 100%;
   width: calc(100% - 400px);
   float: left;
 }
 
 .right_side .chat_container{
-  height: calc(83vh - 75px);
+  height: calc(100% - 130px);
   background-image: url(../img/mine.jpg);
   overflow: auto;
 }
@@ -262,11 +272,19 @@ img{
 }
 
 .chat_container .chat_message{
+  position: relative;
   width: 250px;
   line-height: 60px;
   padding: 0 15px;
   border-radius: 15px;
   width: 30%;
+}
+.chat_message .time{
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  font-size: 13px;
+
 }
 
 .message_baloon{
