@@ -10,8 +10,36 @@ $(document).ready(
         // Ricezione del messaggio
         // Setto il timeout di 2 secondi per il messagio da ricevere
         setTimeout(messageReceived, 2000);
+
       }
+
+
     );
+    // RICERCA NELLA CHAT
+    $('.search input').keypress(
+    function(){
+      var searchText = $('.search input').val();
+      $('.single_chat').each(function(){
+
+        if (searchText.includes($('.contact_name').val())) {
+          console.log($('.contact_name').val());
+
+        };
+      })
+
+
+
+
+    }
+  );
+
+
+
+
+
+
+
+
 
 
 
@@ -82,7 +110,7 @@ $(document).ready(
   function addZeroToMinutes(minutes){
     if (minutes <= 9) {
 
-      var minutesWithZero = '0' + hour;
+      var minutesWithZero = '0' + minutes;
       return minutesWithZero;
 
     } else {
