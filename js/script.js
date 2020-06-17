@@ -16,16 +16,25 @@ $(document).ready(
 
     );
     // RICERCA NELLA CHAT
-    $('.search input').keypress(
+    $('.search input').keyup(
     function(){
-      var searchText = $('.search input').val();
+
       $('.single_chat').each(function(){
 
-        if (searchText.includes($('.contact_name').val())) {
-          console.log($('.contact_name').val());
+        var searchText = $('.search input').val().toLowerCase();
 
+        var searchElement = $(this).find('.contact_name').text().toLowerCase();
+
+        console.log($(this).find('.contact_name'));
+
+        if (searchElement.includes(searchText)) {
+          $(this).show();
+
+        } else {
+          $(this).hide();
         };
-      })
+      }
+    );
 
 
 
