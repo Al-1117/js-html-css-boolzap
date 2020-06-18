@@ -70,13 +70,13 @@ $(document).ready(
 
     // Rendo attiva la dropdown corrente
     currentDropdown.toggleClass('hidden');
-
-
-
 ;
 
+  });
 
-
+  $(document).on('click', '#delete',
+  function (){
+    $(this).parentsUntil('.message_baloon').remove();
 
   });
 

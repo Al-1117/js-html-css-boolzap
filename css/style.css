@@ -213,7 +213,7 @@ img{
 }
 
 .single_chat:hover{
-  background-color: red;
+  background-color: #eaeaea;
 }
 /* .single_chat > *{
   display: inline-block;
