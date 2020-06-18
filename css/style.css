@@ -67,13 +67,6 @@ img{
   cursor: pointer
 }
 
-.active{
-  display: block;
-}
-
-.hidden{
-  display: none;
-}
 
 /* MAIN WRAPPER  */
 .main_wrapper{
@@ -354,6 +347,9 @@ img{
   color: #ffff;
 }
 
+.chat_history{
+  display: none;
+}
 
 /* BOTTOM RIGHT MESSAGE AREA */
 
@@ -395,3 +391,14 @@ img{
 
 
 /* END OF RIGHT SIDE */
+
+
+/* ACTIVE AND HIDDEN */
+
+.active{
+  display: block;
+}
+
+.hidden{
+  display: none;
+}

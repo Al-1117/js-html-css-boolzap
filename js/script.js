@@ -16,20 +16,22 @@ $(document).ready(
 
     );
     // RICERCA NELLA CHAT
+    // Evento Premendo qualsiasi tasto
     $('.search input').keyup(
     function(){
-
+      // Ricerca nella chat
       $('.single_chat').each(function(){
-
+        // Prendo il valore del testo immesso dall'utente e lo standarizzo
         var searchText = $('.search input').val().toLowerCase();
-
+        // Prendo il valore del nome del contatto e lo standarizzo
         var searchElement = $(this).find('.contact_name').text().toLowerCase();
 
         console.log($(this).find('.contact_name'));
-
+        // Confronto se nome del contatto cercato è incluso nel testo della ricerca
         if (searchElement.includes(searchText)) {
+          // Se sì, lo mostro
           $(this).show();
-
+          // Altrimenti lo bascondo
         } else {
           $(this).hide();
         };
@@ -73,12 +75,34 @@ $(document).ready(
 ;
 
   });
-
+  // Eliminazione dei messaggi cliccando sul tasto elimina
   $(document).on('click', '#delete',
   function (){
     $(this).parentsUntil('.message_baloon').remove();
 
   });
+
+  //Associazione dei contatti con le relative chat
+
+  $(document).on('click', '.single_chat',
+  function (){
+
+    var singleConversation = $(this).attr('chat_contact');
+    $('chat_history').removeClass('active');
+    var activeChat = '.chat_history[chat_history="' + singleConversation + '"]';
+    console.log(activeChat);
+      $(activeChat).addClass('active');
+
+
+
+
+
+
+
+
+
+  }
+);
 
 
 
