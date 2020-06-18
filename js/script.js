@@ -9,7 +9,7 @@ $(document).ready(
 
         // Ricezione del messaggio
         // Setto il timeout di 2 secondi per il messagio da ricevere
-        setTimeout(messageReceived, 2000);
+        setTimeout(messageReceived, 1000);
 
       }
 
@@ -42,6 +42,43 @@ $(document).ready(
     }
   );
 
+  // COMPARSA E SCOMPARSA DELLA DROPDOWN DELLE OPZIONI DEL MESSAGGIO
+
+  // Comparsa dell'icona freccia all'entrata del messaggio
+  $('.message_baloon').mouseenter(
+    function (){
+      $(this).find('.arrow').show();
+    }
+  )
+
+  // Scomparsa dell'icona freccia all'entrata del messaggio
+
+  $('.message_baloon').mouseleave(
+    function(){
+      $(this).find('.arrow').hide();
+    }
+  )
+
+  // Evento click sull'icona freccia
+  $(document).on('click', '.arrow',
+  function(){
+    // Seleziono la dropdown attuale
+    var currentDropdown = $(this).siblings('.dropdown');
+
+    // Nascondo le altre dropdown che non sono le correnti
+    $('.dropdown').not(currentDropdown).addClass('hidden');
+
+    // Rendo attiva la dropdown corrente
+    currentDropdown.toggleClass('hidden');
+
+
+
+;
+
+
+
+
+  });
 
 
 
