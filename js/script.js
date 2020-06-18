@@ -11,10 +11,27 @@ $(document).ready(
         // Setto il timeout di 2 secondi per il messagio da ricevere
         setTimeout(messageReceived, 1000);
 
+
+
+        // SCROLL DEI NUOVI MESSAGGI IN AUTOMATICO
+
+        $('.chat_container').scrollTop($('.chat_container').prop('scrollHeight'));
+
+      }
+    );
+
+
+    // INVIO DEI MESSAGGI TRAMITE L'APPOSITO TASTO
+
+    $('.message_input input').keyup(
+      function(){
+        // Se il trasto premuto corrisponde all'invio trovandosi nell'input
+      if (event.wich == 13  || event.keyCode == 13) {
+        messageSent();
       }
 
+    })
 
-    );
     // RICERCA NELLA CHAT
     // Evento Premendo qualsiasi tasto
     $('.search input').keyup(
@@ -41,25 +58,31 @@ $(document).ready(
 
 
 
+
+
     }
   );
 
   // COMPARSA E SCOMPARSA DELLA DROPDOWN DELLE OPZIONI DEL MESSAGGIO
 
   // Comparsa dell'icona freccia all'entrata del messaggio
-  $('.message_baloon').mouseenter(
-    function (){
+  $(document).on('mouseenter', '.message_baloon',
+    function(){
+
       $(this).find('.arrow').show();
+
     }
-  )
+  );
 
   // Scomparsa dell'icona freccia all'entrata del messaggio
 
-  $('.message_baloon').mouseleave(
+  $(document).on('mouseleave', '.message_baloon',
     function(){
       $(this).find('.arrow').hide();
     }
-  )
+
+  );
+
 
   // Evento click sull'icona freccia
   $(document).on('click', '.arrow',
@@ -86,35 +109,23 @@ $(document).ready(
 
   $(document).on('click', '.single_chat',
   function (){
-
+    // Seleziono l'elemento della lista contatti tramite l'attributo
     var singleConversation = $(this).attr('chat_contact');
-    $('chat_history').removeClass('active');
-    var activeChat = '.chat_history[chat_history="' + singleConversation + '"]';
-    console.log(activeChat);
-      $(activeChat).addClass('active');
 
+    // Rimuovo la classe active alle chat
+    $('.chat_history').removeClass('active');
 
+    // Seleziono la chat corrente
+    var currentChat = $('.chat_history[chat_history="'+ singleConversation +'"]');
 
-
-
-
-
-
+    // Aggiungo la classe active alla chat corrente
+    currentChat.addClass('active');
 
   }
 );
 
 
-
-
-
-
-
-
-
-
-    // FUNCTIONS
-
+    // ****************** FUNCTIONS **************************//
 
     // MESSAGGI INVIATI
 
@@ -132,12 +143,12 @@ $(document).ready(
     var date = new Date();
     var hour = date.getHours();
     var minutes = date.getMinutes();
-    var timeNow = addZeroToHours(hour) +':'+ addZeroToMinutes(minutes);
+    var timeNow = addZeroBefore(hour) +':'+ addZeroBefore(minutes);
 
     $(cloneMessageSent).find('.time').text(timeNow);
 
     // Appendo il messaggio alla chat
-    $('.chat_container').append(cloneMessageSent);
+    $('.chat_history.active').append(cloneMessageSent);
 
     // Resetto l'input della chat
     var newMessageSent = $('.message_input input').val('');
@@ -157,44 +168,24 @@ $(document).ready(
     var date = new Date();
     var hour = date.getHours();
     var minutes = date.getMinutes();
-    var timeNow = addZeroToHours(hour) +':'+ addZeroToMinutes(minutes);
+    var timeNow = addZeroBefore(hour) +':'+ addZeroBefore(minutes);
     // Aggiungo l'ora al messaggio
     $(cloneMessageReceived).find('.time').text(timeNow);
     // Appendo il messaggio alla chat
-    $('.chat_container').append(cloneMessageReceived);
+    $('.chat_history.active').append(cloneMessageReceived);
 
   }
 
-  // Funzione per aggiungere lo '0' all'ora
-  function addZeroToHours(hour){
-    if (hour <= 9) {
-      var hourWithZero = '0' + hour;
-      return hourWithZero;
+  // Funzione per aggiungere lo '0' prima dell'ora / minuto
+  function addZeroBefore(number){
+    if (number <= 9) {
+      var numberWithZero = '0' + number;
+      return numberWithZero;
 
     } else {
-      return hour;
+      return number;
     }
   }
-
-  // Funzione per aggiungere lo '0' ai minuti
-  function addZeroToMinutes(minutes){
-    if (minutes <= 9) {
-
-      var minutesWithZero = '0' + minutes;
-      return minutesWithZero;
-
-    } else {
-      return minutes;
-    }
-  }
-
-
-
-
-
-
-
-
 
 
 
