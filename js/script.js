@@ -54,13 +54,13 @@ $(document).ready(
         };
       }
     );
-
-
-
-
-
-
     }
+
+
+
+
+
+
   );
 
   // COMPARSA E SCOMPARSA DELLA DROPDOWN DELLE OPZIONI DEL MESSAGGIO
@@ -120,6 +120,15 @@ $(document).ready(
 
     // Aggiungo la classe active alla chat corrente
     currentChat.addClass('active');
+
+    // Modifico il nome e l'immagine del contatto in alto sopra la chat
+    // con quello corrente
+    var currentChatContact = $('.current_chat');
+    var currentNameContact = $(this).find('.contact_name').text();
+    var currentImageContact = $(this).find('img').attr('src');
+
+    currentChatContact.find('.contact_name_top').text(currentNameContact);
+    currentChatContact.find('img').attr('src', currentImageContact);
 
   }
 );
