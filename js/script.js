@@ -123,11 +123,15 @@ $(document).ready(
 
     // Modifico il nome e l'immagine del contatto in alto sopra la chat
     // con quello corrente
+    // Metto in una variabile la chat corrente
     var currentChatContact = $('.current_chat');
+    // Vado a prendere il nome del contatto dalla lista contatti a sinistra
     var currentNameContact = $(this).find('.contact_name').text();
+    // Vado a prendere l'immagine del contatto dalla lista contatti a sinistra
     var currentImageContact = $(this).find('img').attr('src');
-
+    // Inserisco il nome del contatto corrispondente
     currentChatContact.find('.contact_name_top').text(currentNameContact);
+    // Inserisco l'immagine del contatto corrispondente
     currentChatContact.find('img').attr('src', currentImageContact);
 
   }
