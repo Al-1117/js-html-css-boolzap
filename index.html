@@ -53,7 +53,7 @@
           <!-- Chat lists -->
           <div class="chat_list">
             <!-- Single conversation 1 -->
-            <div chat_contact="1" class="single_chat">
+            <div chat_contact="1" class="single_chat selected_chat">
               <div class="profile avatar chat_contact_infos">
                 <img src="img/avatar_1.jpg" alt="my profile">
               </div>
@@ -197,13 +197,13 @@
             <div chat_history="1" class="chat_history chat_history_1 active">
               <div class="message_baloon sent_message with_dropdown">
                 <div class="chat_message sent">
-                  <span>Come stai? </span>
+                  <span>Ciao Michele </span>
                   <div class="arrow"><i class="fas fa-angle-down"></i></div>
                   <span class="time text_grey">17:00</span>
                 <!-- Dropdown -->
                   <ul class="dropdown hidden">
-                    <li id="delete">Delete Message</li>
-                    <li>Message Info</li>
+                    <li id="delete">Elimina Messaggio</li>
+                    <li>Info Messaggio</li>
                   </ul>
                 </div>
 
@@ -211,7 +211,7 @@
 
               <div class="message_baloon received_message">
                 <div class="chat_message received">
-                  <span>Come stai? </span>
+                  <span>Come stai?</span>
                   <div class="arrow"><i class="fas fa-angle-down"></i></div>
                   <span class="time text_grey">17:00</span>
                   <!-- Dropdown -->
@@ -278,7 +278,7 @@
             <div chat_history="2" class="chat_history chat_history_2">
               <div class="message_baloon sent_message with_dropdown">
                 <div class="chat_message sent">
-                  <span>Come stai? </span>
+                  <span>Ciao Fabio</span>
                   <div class="arrow"><i class="fas fa-angle-down"></i></div>
                   <span class="time text_grey">17:00</span>
                 <!-- Dropdown -->
@@ -304,7 +304,7 @@
               </div>
               <div class="message_baloon sent_message">
                 <div class="chat_message sent">
-                  <span>Come stai? </span>
+                  <span>Come stai?</span>
                   <div class="arrow"><i class="fas fa-angle-down"></i></div>
                   <span class="time text_grey">17:00</span>
                   <!-- Dropdown -->
@@ -357,7 +357,7 @@
             <div chat_history="3" class="chat_history chat_history_3">
               <div class="message_baloon sent_message with_dropdown">
                 <div class="chat_message sent">
-                  <span>Come stai? </span>
+                  <span>Ciao Samuele? </span>
                   <div class="arrow"><i class="fas fa-angle-down"></i></div>
                   <span class="time text_grey">17:00</span>
                 <!-- Dropdown -->
@@ -436,7 +436,7 @@
             <div chat_history="4" class="chat_history chat_history_4">
               <div class="message_baloon sent_message with_dropdown">
                 <div class="chat_message sent">
-                  <span>Come stai? </span>
+                  <span>Ciao Alessandro B? </span>
                   <div class="arrow"><i class="fas fa-angle-down"></i></div>
                   <span class="time text_grey">17:00</span>
                 <!-- Dropdown -->
@@ -515,7 +515,7 @@
             <div chat_history="5" class="chat_history chat_history_5">
               <div class="message_baloon sent_message with_dropdown">
                 <div class="chat_message sent">
-                  <span>Come stai? </span>
+                  <span>Ciao Alessandro L? </span>
                   <div class="arrow"><i class="fas fa-angle-down"></i></div>
                   <span class="time text_grey">17:00</span>
                 <!-- Dropdown -->
@@ -594,7 +594,7 @@
             <div chat_history="6" class="chat_history chat_history_6">
               <div class="message_baloon sent_message with_dropdown">
                 <div class="chat_message sent">
-                  <span>Come stai? </span>
+                  <span>Ciao Claudia</span>
                   <div class="arrow"><i class="fas fa-angle-down"></i></div>
                   <span class="time text_grey">17:00</span>
                 <!-- Dropdown -->
@@ -673,7 +673,7 @@
             <div chat_history="7" class="chat_history chat_history_7">
               <div class="message_baloon sent_message with_dropdown">
                 <div class="chat_message sent">
-                  <span>Come stai? </span>
+                  <span>Ciao Davide </span>
                   <div class="arrow"><i class="fas fa-angle-down"></i></div>
                   <span class="time text_grey">17:00</span>
                 <!-- Dropdown -->
@@ -752,7 +752,7 @@
             <div chat_history="8" class="chat_history chat_history_8">
               <div class="message_baloon sent_message with_dropdown">
                 <div class="chat_message sent">
-                  <span>Come stai? </span>
+                  <span>Ciao Federico </span>
                   <div class="arrow"><i class="fas fa-angle-down"></i></div>
                   <span class="time text_grey">17:00</span>
                 <!-- Dropdown -->
@@ -862,7 +862,26 @@
         <div class="bottom_right message_area">
           <!-- Emoji -->
           <div class="emoji icons_style btn_sent">
-            <i class="far fa-smile-beam"></i>
+            <span><i class="far fa-smile-beam"></i></span>
+            <ul class="emoji_dropdown with_dropdown hidden">
+              <li><i class="far fa-grin"></i></li>
+              <li><i class="far fa-grin-alt"></i></li>
+              <li><i class="far fa-grin-squint"></i></li>
+              <li><i class="far fa-grin-squint-tears"></i></li>
+              <li><i class="far fa-grin-stars"></i></li>
+              <li><i class="far fa-grin-tears"></i></li>
+              <li><i class="far fa-grin-tongue"></i></li>
+              <li><i class="far fa-grin-wink"></i></li>
+              <li><i class="far fa-kiss-beam"></i></li>
+              <li><i class="far fa-meh"></i></li>
+              <li><i class="far fa-meh-blank"></i></li>
+              <li><i class="far fa-meh-rolling-eyes"></i></li>
+              <li><i class="far fa-sad-cry"></i></li>
+              <li><i class="far fa-sad-tear"></i></li>
+              <li><i class="far fa-surprise"></i></li>
+
+
+            </ul>
           </div>
           <!-- Text area message input -->
           <div class="message_input">
@@ -870,7 +889,8 @@
 
           </div>
           <div class="send icons_style" id="send_button">
-            <i class="fab fa-telegram-plane"></i>
+            <span class="plane hidden"><i class="fab fa-telegram-plane"></i></span>
+            <span class="mic active"><i class="fa fa-microphone" aria-hidden="true"></i></span>
           </div>
         </div>
       </main>
