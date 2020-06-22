@@ -9,13 +9,16 @@ $(document).ready(
 
       // Ricezione del messaggio
       // Setto il timeout di 2 secondi per il messagio da ricevere
-      setTimeout(messageReceived, 1000);
+      setTimeout(messageReceived, 2000);
 
 
 
-      // SCROLL DEI NUOVI MESSAGGI IN AUTOMATICO ANCHE TRAMITE 
+
+      // SCROLL DEI NUOVI MESSAGGI IN AUTOMATICO ANCHE TRAMITE
 
       $('.chat_container').scrollTop($('.chat_container').prop('scrollHeight'));
+
+
 
     }
   );
@@ -85,7 +88,6 @@ $(document).ready(
   $(document).on('mouseenter', '.emoji',
     function(){
       $(this).children('.emoji_dropdown').slideDown(1000);
-      // removeClass('hidden').addClass('active')
     }
 
   );
@@ -117,7 +119,7 @@ $(document).ready(
   );
 
   // Eliminazione dei messaggi cliccando sul tasto elimina
-  $(document).on('click', '#delete',
+  $(document).on('click', '.delete',
     function (){
       $(this).parentsUntil('.message_baloon').remove();
 
@@ -185,6 +187,7 @@ $(document).ready(
 
     $(cloneMessageSent).find('.time').text(timeNow);
 
+
     // Appendo il messaggio alla chat
     $('.chat_history.active').append(cloneMessageSent);
 
@@ -196,6 +199,11 @@ $(document).ready(
     $('.plane').removeClass('active').addClass('hidden');
     // E al suo posto comparirà il microfono come default
     $('.mic').removeClass('hidden').addClass('active');
+    // Visualizzo lo stato ("Sta scrivendo...")
+    $('.typing').removeClass('hidden').addClass('active');
+    // Nascondo ultimo accesso
+    $('.last_seen').addClass('hidden');
+
   }
 
   // MESSAGGI RICEVUTI
@@ -206,7 +214,8 @@ $(document).ready(
 
     console.log(cloneMessageReceived);
     //Cambio il testo del messaggio nel testo predefinito
-    $(cloneMessageReceived).find('span').text('ciao');
+    $(cloneMessageReceived).find('span').text('ok');
+
 
     // Agiungo l'ora corrente
     var date = new Date();
@@ -217,6 +226,16 @@ $(document).ready(
     $(cloneMessageReceived).find('.time').text(timeNow);
     // Appendo il messaggio alla chat
     $('.chat_history.active').append(cloneMessageReceived);
+
+    // Nascondo "sta scrivendo..."
+    $('.typing').removeClass('active').addClass('hidden');
+    // Visualizzo di nuovo l'ultimo accesso aggiornato
+    $('.last_seen').removeClass('hidden');
+    // Aggiorno l'ultimo accesso nei contatti a sinistra
+    $('.selected_chat').find('.last_seen_time').text(timeNow);
+    // Aggiorno l'accesso in alto a sinistra
+    $('.right_side').find('.last_seen_time').text(timeNow);
+
 
   }
 
