@@ -278,7 +278,7 @@ img{
   max-width: 50%;
   display: inline-block;
   min-height: 50px;
-  word-break: break-word;
+  word-break: break-all;
   display: flex;
   align-items: center;
   clear: both;

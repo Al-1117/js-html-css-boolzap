@@ -57,7 +57,6 @@ $(document).ready(
   // Comparsa dell'icona freccia all'entrata del messaggio
   $(document).on('mouseenter', '.message_baloon',
     function(){
-
       $(this).find('.arrow').show();
 
     }
